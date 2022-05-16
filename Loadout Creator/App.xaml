@@ -1,0 +1,13 @@
+﻿<Application
+    x:Class="Loadout_Creator.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Loadout_Creator"
+    xmlns:c="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    RequestedTheme="Dark">
+    <Application.Resources>
+        <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+      
+    </Application.Resources>
+   
+</Application>

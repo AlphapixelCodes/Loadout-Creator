@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataSets>
+	<DataSet Name="Primary">
+		<Properties>
+			<DataColumn Name="Attachments" Type="Data Set Reference" RefrerencedSet="Attachments" />
+		</Properties>
+		<Groups>
+			<Group Name="Assault Rifle" />
+		</Groups>
+		<DataElements>
+			<DataElement Name="R7 LAUNCHER">
+				<Groups>
+					<Group Name="Assault Rifle" />
+				</Groups>
+				<Properties>
+					<DataColumn Name="Attachments" Type="Data Set Reference" RefrerencedSet="Attachments" />
+				</Properties>
+			</DataElement>
+			<DataElement Name="TAC700">
+				<Groups>
+					<Group Name="Assault Rifle" />
+				</Groups>
+				<Properties>
+					<DataColumn Name="Attachments" Type="Data Set Reference" RefrerencedSet="Attachments" />
+				</Properties>
+			</DataElement>
+			<DataElement Name="M4A1">
+				<Groups>
+					<Group Name="Assault Rifle" />
+				</Groups>
+				<Properties>
+					<DataColumn Name="Attachments" Type="Data Set Reference" RefrerencedSet="Attachments">
+						<Reference ElementName="HOLOSIGHT EXPS3" />
+						<Reference ElementName="MICROT2" />
+						<Reference ElementName="M5B" />
+						<Reference ElementName="SRS" />
+						<Reference ElementName="SDR 1-4X" />
+						<Reference ElementName="SOCOM SUPPRESSOR" />
+						<Reference ElementName="ASR BRAKE" />
+						<Reference ElementName="SFMB BRAKE" />
+						<Reference ElementName="NONE" />
+					</DataColumn>
+				</Properties>
+			</DataElement>
+			<DataElement Name="ARWC">
+				<Groups>
+					<Group Name="Assault Rifle" />
+				</Groups>
+				<Properties>
+					<DataColumn Name="Attachments" Type="Data Set Reference" RefrerencedSet="Attachments" />
+				</Properties>
+			</DataElement>
+			<DataElement Name="SR-16">
+				<Groups>
+					<Group Name="Assault Rifle" />
+				</Groups>
+				<Properties>
+					<DataColumn Name="Attachments" Type="Data Set Reference" RefrerencedSet="Attachments" />
+				</Properties>
+			</DataElement>
+			<DataElement Name="HK416">
+				<Groups>
+					<Group Name="Assault Rifle" />
+				</Groups>
+				<Properties>
+					<DataColumn Name="Attachments" Type="Data Set Reference" RefrerencedSet="Attachments" />
+				</Properties>
+			</DataElement>
+			<DataElement Name="MK1 CARBINE">
+				<Groups>
+					<Group Name="Assault Rifle" />
+				</Groups>
+				<Properties>
+					<DataColumn Name="Attachments" Type="Data Set Reference" RefrerencedSet="Attachments" />
+				</Properties>
+			</DataElement>
+			<DataElement Name="MK16">
+				<Groups>
+					<Group Name="Assault Rifle" />
+				</Groups>
+				<Properties>
+					<DataColumn Name="Attachments" Type="Data Set Reference" RefrerencedSet="Attachments" />
+				</Properties>
+			</DataElement>
+			<DataElement Name="SLR47">
+				<Groups>
+					<Group Name="Assault Rifle" />
+				</Groups>
+				<Properties>
+					<DataColumn Name="Attachments" Type="Data Set Reference" RefrerencedSet="Attachments" />
+				</Properties>
+			</DataElement>
+			<DataElement Name="G36C">
+				<Groups>
+					<Group Name="Assault Rifle" />
+				</Groups>
+				<Properties>
+					<DataColumn Name="Attachments" Type="Data Set Reference" RefrerencedSet="Attachments" />
+				</Properties>
+			</DataElement>
+			<DataElement Name="ARN-18">
+				<Groups>
+					<Group Name="Assault Rifle" />
+				</Groups>
+				<Properties>
+					<DataColumn Name="Attachments" Type="Data Set Reference" RefrerencedSet="Attachments" />
+				</Properties>
+			</DataElement>
+		</DataElements>
+	</DataSet>
+	<DataSet Name="Attachments">
+		<Properties />
+		<Groups>
+			<Group Name="Optics" />
+			<Group Name="Muzzle" />
+			<Group Name="Underbarrel" />
+			<Group Name="Overbarrel" />
+			<Group Name="Ammunition" />
+		</Groups>
+		<DataElements>
+			<DataElement Name="HOLOSIGHT EXPS3">
+				<Groups>
+					<Group Name="Optics" />
+				</Groups>
+				<Properties />
+			</DataElement>
+			<DataElement Name="MICROT2">
+				<Groups>
+					<Group Name="Optics" />
+				</Groups>
+				<Properties />
+			</DataElement>
+			<DataElement Name="M5B">
+				<Groups>
+					<Group Name="Optics" />
+				</Groups>
+				<Properties />
+			</DataElement>
+			<DataElement Name="SRS">
+				<Groups>
+					<Group Name="Optics" />
+				</Groups>
+				<Properties />
+			</DataElement>
+			<DataElement Name="SDR 1-4X">
+				<Groups>
+					<Group Name="Optics" />
+				</Groups>
+				<Properties />
+			</DataElement>
+			<DataElement Name="SOCOM SUPPRESSOR">
+				<Groups>
+					<Group Name="Muzzle" />
+				</Groups>
+				<Properties />
+			</DataElement>
+			<DataElement Name="ASR BRAKE">
+				<Groups>
+					<Group Name="Muzzle" />
+				</Groups>
+				<Properties />
+			</DataElement>
+			<DataElement Name="SFMB BRAKE">
+				<Groups>
+					<Group Name="Muzzle" />
+				</Groups>
+				<Properties />
+			</DataElement>
+			<DataElement Name="VERTICAL GRIP">
+				<Groups>
+					<Group Name="Underbarrel" />
+				</Groups>
+				<Properties />
+			</DataElement>
+			<DataElement Name="ANGLED GRIP">
+				<Groups>
+					<Group Name="Underbarrel" />
+				</Groups>
+				<Properties />
+			</DataElement>
+			<DataElement Name="COMBAT GRIP">
+				<Groups>
+					<Group Name="Underbarrel" />
+				</Groups>
+				<Properties />
+			</DataElement>
+			<DataElement Name="M600V FLASHLIGHT">
+				<Groups>
+					<Group Name="Overbarrel" />
+				</Groups>
+				<Properties />
+			</DataElement>
+			<DataElement Name="LASER POINTER">
+				<Groups>
+					<Group Name="Overbarrel" />
+				</Groups>
+				<Properties />
+			</DataElement>
+			<DataElement Name="PEQ-15 IR LASER">
+				<Groups>
+					<Group Name="Overbarrel" />
+				</Groups>
+				<Properties />
+			</DataElement>
+			<DataElement Name="+5 PMAG">
+				<Groups>
+					<Group Name="Ammunition" />
+				</Groups>
+				<Properties />
+			</DataElement>
+			<DataElement Name="NONE">
+				<Groups>
+					<Group Name="Ammunition" />
+					<Group Name="Underbarrel" />
+					<Group Name="Overbarrel" />
+					<Group Name="Muzzle" />
+					<Group Name="Optics" />
+				</Groups>
+				<Properties/>
+			</DataElement>
+		</DataElements>
+	</DataSet>
+</DataSets>

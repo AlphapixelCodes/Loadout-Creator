@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataSets>
+	<DataSet Name="PrimaryWeapons">
+		<Groups>
+			<Group Name="ASSAULT RIFLE" />
+			<Group Name="SUBMACHINE GUN" />
+			<Group Name="SHOTGUN" />
+			<Group Name="LAUNCHER" />
+		</Groups>
+		<Data>
+			<DataElement Name="R7 LAUNCHER">
+				<Group Name="ASSAULT RIFLE" />
+			</DataElement>
+			<DataElement Name="TAC700">
+				<Group Name="ASSAULT RIFLE" />
+			</DataElement>
+			<DataElement Name="SA-58">
+				<Group Name="ASSAULT RIFLE" />
+			</DataElement>
+			<DataElement Name="M4A1">
+				<Group Name="ASSAULT RIFLE" />
+			</DataElement>
+			<DataElement Name="ARWC">
+				<Group Name="ASSAULT RIFLE" />
+			</DataElement>
+			<DataElement Name="SR-16">
+				<Group Name="ASSAULT RIFLE" />
+			</DataElement>
+			<DataElement Name="MK1 CARBINE">
+				<Group Name="ASSAULT RIFLE" />
+			</DataElement>
+			<DataElement Name="MK16">
+				<Group Name="ASSAULT RIFLE" />
+			</DataElement>
+			<DataElement Name="SLR47">
+				<Group Name="ASSAULT RIFLE" />
+			</DataElement>
+			<DataElement Name="G36C">
+				<Group Name="ASSAULT RIFLE" />
+			</DataElement>
+			<DataElement Name="MP5A2">
+				<Group Name="SUBMACHINE GUN" />
+			</DataElement>
+			<DataElement Name="UMP-45">
+				<Group Name="SUBMACHINE GUN" />
+			</DataElement>
+			<DataElement Name="MPX">
+				<Group Name="SUBMACHINE GUN" />
+			</DataElement>
+			<DataElement Name="BEANBAG SHOTGUN">
+				<Group Name="SHOTGUN" />
+			</DataElement>
+			<DataElement Name="M4 SUPER 90">
+				<Group Name="SHOTGUN" />
+			</DataElement>
+			<DataElement Name="870 CQB">
+				<Group Name="SHOTGUN" />
+			</DataElement>
+			<DataElement Name="M32A1 FLASH">
+				<Group Name="LAUNCHER" />
+			</DataElement>
+		</Data>
+	</DataSet>
+	<DataSet Name="SecondaryWeapons">
+		<Groups />
+		<Data>
+			<DataElement Name="G19" />
+			<DataElement Name="M45A1" />
+			<DataElement Name=".357 MAGNUM" />
+			<DataElement Name="P92X" />
+			<DataElement Name="TASER" />
+			<DataElement Name="57 USG" />
+			<DataElement Name="USP45" />
+		</Data>
+	</DataSet>
+	<DataSet Name="Long Tactical">
+		<Groups />
+		<Data>
+			<DataElement Name="MIRRORGUN" />
+			<DataElement Name="BREACHING SHOTGUN" />
+			<DataElement Name="BALLISTIC SHIELD" />
+			<DataElement Name="RESCUE SHIELD" />
+			<DataElement Name="BATTERING RAM" />
+			<DataElement Name="M320 WITH FLASHBANG" />
+			<DataElement Name="M320 WITH STINGER" />
+			<DataElement Name="M320 WITH GAS" />
+		</Data>
+	</DataSet>
+	<DataSet Name="Armor">
+		<Groups />
+		<Data>
+			<DataElement Name="NO ARMOR" />
+			<DataElement Name="LIGHT ARMOR" />
+			<DataElement Name="HEAVY ARMOR" />
+		</Data>
+	</DataSet>
+	<DataSet Name="Headwear">
+		<Groups />
+		<Data>
+			<DataElement Name="NO FACEWEAR" />
+			<DataElement Name="NVGS" />
+			<DataElement Name="CBRN RIOT GAS MASK" />
+			<DataElement Name="ANTI-FLASH GOGGLES" />
+			<DataElement Name="BALLISTIC FACEMASK" />
+		</Data>
+	</DataSet>
+	<DataSet Name="Grenades">
+		<Groups />
+		<Data>
+			<DataElement Name="FLASHBANG" />
+			<DataElement Name="CS GAS" />
+			<DataElement Name="STINGER GRENADE" />
+		</Data>
+	</DataSet>
+	<DataSet Name="Tactical Devices">
+		<Groups />
+		<Data>
+			<DataElement Name="C2 EXPLOSIVES" />
+			<DataElement Name="DOOR WEDGE" />
+			<DataElement Name="PEPPER SPRAY" />
+			<DataElement Name="LOCKPICK GUN" />
+		</Data>
+	</DataSet>
+</DataSets>

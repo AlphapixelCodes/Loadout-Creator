@@ -1,0 +1,54 @@
+﻿<UserControl
+    x:Class="Loadout_Creator.ImageGroup"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Loadout_Creator"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:c="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    d:DesignHeight="300"
+    d:DesignWidth="400"
+    RequestedTheme="Dark" Loaded="UserControl_Loaded"   >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Grid BorderBrush="Gray" BorderThickness="0,0,0,1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Group Name" Name="NameBlock" VerticalAlignment="Center" Foreground="#FFAFAFAF" FontSize="23" Margin="0,3"/>
+            
+            <Button Grid.Column="1" Padding="3" Background="Transparent" BorderThickness="0" Margin="5" CornerRadius="0" VerticalAlignment="Stretch">
+                <SymbolIcon Symbol="More"/>
+                <Button.Flyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem Text="Rename" Click="MenuFlyoutItem_Click"/>
+                    </MenuFlyout>
+                </Button.Flyout>
+            </Button>
+        </Grid>
+        <c:AdaptiveGridView Name="GridView" Grid.Row="1" Grid.ColumnSpan="2" DesiredWidth="200" ItemHeight="200" StretchContentForSingleRow="False" SelectionChanged="GridView_SelectionChanged">
+            <c:AdaptiveGridView.ItemTemplate>
+                <DataTemplate x:DataType="local:ImageData">
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Image  Source="{Binding Image}" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Grid VerticalAlignment="Bottom" Background="#CC767676" HorizontalAlignment="Stretch">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Margin="5,0,0,0" Text="{Binding Group}" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" TextTrimming="CharacterEllipsis"/>
+                            <TextBlock Margin="0,0,5,0" Text="{Binding ID}" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </c:AdaptiveGridView.ItemTemplate>
+        </c:AdaptiveGridView>
+    </Grid>
+</UserControl>

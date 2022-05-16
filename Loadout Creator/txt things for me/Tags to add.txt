@@ -1,0 +1,25 @@
+﻿Grid
+	RowDefinitions
+		RowDefinition
+	ColumnDefinitions
+		ColumnDefinition
+Stack
+Pivot
+	PivotItem
+DropDown -dont use dropdown button cuz it uses flyout or maybe use it
+CollapseBox
+
+
+[Selection Boxes]
+ComboBox
+GroupListBox
+GroupPivotBox
+ListBox
+
+Label
+
+Button
+	Dialog? not sure how to do this where I can have 2 dialogs open at once
+
+
+	maybe have a HideIfEmpty="{Data,WhiteList,BlackList}"

@@ -1,0 +1,37 @@
+﻿<Page
+    x:Class="Loadout_Creator.SchemaPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Loadout_Creator"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:c="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    mc:Ignorable="d"
+    RequestedTheme="Dark"
+    Loaded="Page_Loaded"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Pivot>
+        <PivotItem Header="Layout" Name="LayoutPivotItem"/>
+
+
+        <PivotItem Header="Data" Name="Data2PivotItem"/>
+        <PivotItem Header="Query" Name="QueryPivotItem"/>
+        <PivotItem Header="Images" Name="ImagePivotItem"/>
+        <PivotItem Header="demo">
+            <StackPanel>
+                <c:Expander Header="Fuck2" HorizontalAlignment="Stretch">
+                    <c:Expander.Style>
+                        <Style TargetType="c:Expander">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        </Style>
+                    </c:Expander.Style>
+                    <Grid HorizontalAlignment="Stretch">
+                    <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="340" Fill="Red"/>
+                    </Grid>
+                </c:Expander>
+            </StackPanel>
+        </PivotItem>
+
+    </Pivot>
+</Page>

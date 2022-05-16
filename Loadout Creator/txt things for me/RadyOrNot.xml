@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<Popups>
+		<Popup Title="Edit Primary" Name="PrimaryDialog">
+			<GroupListBox GroupsCollapsable="true"  Name="PrimaryWeapon" Data="{DataSet=Weapons,Whitelist=Primary}" Groups="Sub Machine Guns,Assault Rifles,Shotgun,Launcher"/>
+		</Popup>
+		<Popup Title="Edit Loadout" Name="LoadoutPopup">
+			<Grid>
+				<RowDefinitions>
+					<RowDefiniton Height="auto"/>
+					<RowDefiniton Height="auto"/>
+					<RowDefiniton Height="auto"/>
+					<RowDefiniton Height="auto"/>
+					<RowDefiniton Height="auto"/>
+					<RowDefiniton Height="auto"/>
+				</RowDefinitions>
+				<ColumnDefinitions>
+					<ColumnDefinition Width="auto"/>
+				</ColumnDefinitions>
+				<!--<DropDown Title="PRIMARY WEAPONS" Text="{PrimaryWeapon}">
+					<GroupListBox GroupsCollapsable="true"  Name="PrimaryWeapon" Data="{DataSet=Weapons,Whitelist=Primary}" Groups="Sub Machine Guns,Assault Rifles,Shotgun,Launcher"/>
+				</DropDown>-->
+
+				<DropDown Row="1" Title="SECONDARY WEAPONS" Text="{Secondary}">
+					<ListBox Name="SecondaryWeapon" Data="{Weapons,Secondary}"/>
+				</DropDown>
+
+				<DropDown Row="2" Title="LONG TACTICAL" Text="{Long Tactical}">
+					<ListBox Name="LongTactical" Data="LongTactical"/>
+				</DropDown>
+
+
+				<DropDown Row="3" Title="GEAR" Margin="0,20,0,20">
+					<Stack>
+						<DropDown Title="ARMOR" Text="{Armor}">
+							<ListBox Name="Armor" Data="Armor"/>
+						</DropDown>
+						<DropDown Title="HEAD WEAR" Text="{HeadWear}">
+							<ListBox Name="HeadWear" Data="HeadWear"/>
+						</DropDown>
+					</Stack>
+				</DropDown>
+
+				<DropDown Row="4" Title="GRENADES" Text="{Grenades}">
+					<ListBox Name="Grenades" Data="Grenades"/>
+				</DropDown>
+				<DropDown Row="5" Title="TACTICAL DEVICES" Text="{TacticalDevices}">
+					<ListBox Name="TacticalDevices" Data="TacticalDevices"/>
+				</DropDown>
+			</Grid>
+		</Popup>
+		<Popup Name="PrimaryAttachmentPopup">
+			<Stack Spacing="5">
+				<Label Text="OPTICS"/>
+				<ComboBox Name="PrimaryOptic" Data="{PrimaryAttachments,Optic}"/>
+				<Label Text="MUZZLE"/>
+				<ComboBox Data="{PrimaryAttachments,Muzzles}" />
+				<Label Text="UNDERBARREL"/>
+				<ComboBox Data="{PrimaryAttachments,Underbarrels}"/>
+				<Label Text="OVERBARREL"/>
+				<ComboBox Data="{PrimaryAttachments,Overbarrels}"/>
+				<Label Text="AMMUNITION"/>
+				<ComboBox Data="{PrimaryAttachments,Ammunition}"/>
+			</Stack>
+		</Popup>
+	</Popups>
+	<Main><!--is a grid-->
+		<Stack Spacing="5">
+			<Label Text="Primary" FontSize="20"/>
+			<Label Text="{PrimaryWeapon}"/>
+			<Button Text="Edit" Dialog=""/>
+			<CollapseBox Text="Attachments">
+				<Label Text="Optic" HideIfEmpty="{PrimaryOptic}"/>
+				<Label Text="{PrmaryOptic}" HideIfEmpty="{PrimaryOptic}"/>
+				<Button Text="Edit Loadout" Popup="LoadoutPopup" HorizontalAlignment="Right"/>
+			</CollapseBox>
+			
+			
+		</Stack>
+	</Main>
+</root>

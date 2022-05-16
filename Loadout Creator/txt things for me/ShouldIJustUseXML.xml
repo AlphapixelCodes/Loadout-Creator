@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid>
+	<GeneralProperties>
+		Margin
+		Padding
+		BackgroundColor
+		BorderColor
+		BorderThickness
+		CornerRadius
+		Name?
+		Height
+			MaxHeight
+			MinHeight
+		Width -Auto/int
+			MaxWidth -int? maybe double
+			MinWidth -int
+		HorizontalAlignment
+		VerticalAlignment
+	</GeneralProperties>
+	<Stack Margin="0,0,0,5" ItemSpacing="" BackgroundColor="red idk" BorderColor="" BorderThickness="1,1,1,1" Padding="1,1,1,1" >
+		Stack
+		Grid
+		Image
+		<Label Text="{Binding ElementName=ComboBox1}" FontSize="12"/>
+		<DialogButton Text="the" Image="" idkManDialog="DialogName">
+			<PivotDataViewer Name="wowzers" Data="myData" WhiteListGroups="GroupA,GroupB" BlackListGroup="GroupC"/>
+		</DialogButton>
+		<ComboBox Data="Attachments" WhiteListGroups="{Binding },"/>
+		<Combobox Data="" FilterGroup="None" Name="ComboBox1"/>
+		Collapseable idk with a title maybe make text source like listbox value
+		
+		<Listbox Data="" FilterGroup="None"/>
+		<ImageSelectionGrid Data=""/>
+		<PivotDataViewer Data=""/>
+	</Stack>
+</Grid>

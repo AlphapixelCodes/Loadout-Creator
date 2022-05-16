@@ -1,0 +1,114 @@
+﻿<Page
+    x:Class="Loadout_Creator.ImageManagementPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Loadout_Creator"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:c="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent"
+    RequestedTheme="Dark" Name="rootImagePage"
+    Loaded="rootImagePage_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid BorderBrush="Gray" BorderThickness="0,0,0,1" Padding="5">
+            <Button Content="Add" Click="Upload_Click" CornerRadius="0" Background="Transparent" BorderThickness="0"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="5" Margin="5">
+                <Button Content="Delete Selected" Name="DeleteSelectedButton" Click="DeleteSelectedGroupsButton_Click"/>
+                <ComboBox VerticalAlignment="Center" Width="150" SelectedIndex="2" SelectionChanged="ImageSizeComboBox_SelectionChanged">
+                    <ComboBoxItem Content="Small Images"/>
+                    <ComboBoxItem Content="Medium Images"/>
+                    <ComboBoxItem Content="Large Images"/>
+                </ComboBox>
+                <ToggleButton Name="GroupToggleButton" Content="Group"  Grid.Column="2" HorizontalAlignment="Right" Click="ToggleButton_Click" RenderTransformOrigin="0.502,0.5"/>
+                <ToggleButton Content="Multi Select" Grid.Column="2" HorizontalAlignment="Right" Click="ToggleButton_Click"/>
+                <Button VerticalAlignment="Stretch" BorderBrush="Transparent" BorderThickness="0">
+                    <SymbolIcon Symbol="More"/>
+                    <Button.Flyout>
+                        <MenuFlyout>
+                            <MenuFlyoutItem Text="Import Data" Icon="ImportAll" Click="MoreButtonFlyout_Click"/>
+                            <MenuFlyoutItem Text="Export Data" Icon="Share" Click="MoreButtonFlyout_Click"/>
+                            <MenuFlyoutItem Text="Delete All" Icon="Delete" Click="MoreButtonFlyout_Click"/>
+                        </MenuFlyout>
+                    </Button.Flyout>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <!--<TextBlock Text="groups, image size options and side panel for bigger picture"/>-->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*" MinWidth="400"/>
+            </Grid.ColumnDefinitions>
+            <Frame x:Name="MainImageGroupingViewFrame"/>
+            <c:AdaptiveGridView Name="MainImageGridView" ItemHeight="{Binding ElementName=rootImagePage,Path=ImageSize}"  DesiredWidth="{Binding ElementName=rootImagePage,Path=ImageSize}" SelectionMode="{Binding ElementName=rootImagePage,Path=MultiSelectMode}" SelectionChanged="AdaptiveGridViewControl_SelectionChanged" StretchContentForSingleRow="False">
+                <c:AdaptiveGridView.ItemTemplate>
+                    <DataTemplate x:DataType="local:ImageData">
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Black">
+                            <Image  Source="{Binding Image}" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <Grid VerticalAlignment="Bottom" Background="#CC767676" HorizontalAlignment="Stretch">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Margin="5,0,0,0" Text="{Binding Group}" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" TextTrimming="CharacterEllipsis"/>
+                                <TextBlock Margin="0,0,5,0" Text="{Binding ID}" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </c:AdaptiveGridView.ItemTemplate>
+            </c:AdaptiveGridView>
+            <ScrollViewer Grid.Column="1" MinWidth="300" HorizontalAlignment="Stretch" BorderBrush="Gray" BorderThickness="1,0,0,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="400"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid MinWidth="150" MaxWidth="400" Height="350" Width="350" HorizontalAlignment="Center" BorderBrush="Gray" BorderThickness="1">
+                        <c:AdaptiveGridView Margin="5" SelectionMode="None" HorizontalAlignment="Stretch" Name="SelectedImageGrid" Height="400"  ItemHeight="50" DesiredWidth="50">
+                            <c:AdaptiveGridView.ItemTemplate>
+                                <DataTemplate x:DataType="local:ImageData">
+                                    <Viewbox>
+                                    <Image Source="{Binding Image}" Stretch="UniformToFill"/>
+                                    </Viewbox>
+                                </DataTemplate>
+                            </c:AdaptiveGridView.ItemTemplate>
+                        </c:AdaptiveGridView>
+                        <Border Padding="5" Width="35" Height="35" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            Background="#CCFFFFFF">
+                            <TextBlock Text="" Name="SelectedImageCountBlock" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </Grid>
+                    <StackPanel Grid.Row="1" HorizontalAlignment="Center" Spacing="5">
+                        <TextBlock Text="Group" HorizontalAlignment="Center"/>
+                        <StackPanel Orientation="Horizontal" Spacing="5">
+                            <ComboBox x:Name="GroupComboBox" HorizontalAlignment="Stretch" MinWidth="100"/>
+                            <Button Width="32" Height="32" x:Name="AddGroupButton" Padding="0" Tag="Add" Click="GroupButton_Click">
+                                <SymbolIcon Symbol="Add"/>
+                            </Button>
+                            <Button Width="32" Height="32" x:Name="ClearGroupButton" Padding="0" Tag="Clear" Click="GroupButton_Click">
+                                <SymbolIcon Symbol="Clear" />
+                            </Button>
+                            <!--<Button Width="32" Height="32" Padding="0">
+                                <SymbolIcon Symbol="More"/>
+                                <Button.Flyout>
+                                    <MenuFlyout>
+                                        <MenuFlyoutItem Text="Edit Groups"/>
+                                    </MenuFlyout>
+                                </Button.Flyout>
+                            </Button>-->
+                        </StackPanel>
+                        
+                    </StackPanel>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Page>

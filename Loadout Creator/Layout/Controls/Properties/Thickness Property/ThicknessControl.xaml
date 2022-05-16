@@ -1,0 +1,37 @@
+﻿<UserControl
+    x:Class="Loadout_Creator.ThicknessControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Loadout_Creator"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400" Loaded="UserControl_Loaded">
+
+    <Grid RowSpacing="5" MaxWidth="300" HorizontalAlignment="Right" x:Name="MainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="64"/>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="64"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="32"/>
+        </Grid.RowDefinitions>
+        <SymbolIcon Symbol="Back" Margin="5"/>
+        <TextBox Grid.Column="1" Name="LeftThick" BeforeTextChanging="_BeforeTextChanging"/>
+        <SymbolIcon Grid.Column="2" Symbol="Forward" Margin="5"/>
+        <TextBox Grid.Column="3" Name="RightThick" BeforeTextChanging="_BeforeTextChanging"/>
+        
+        <SymbolIcon Symbol="Up" Grid.Row="1" Margin="5"/>
+        <TextBox Grid.Column="1" Grid.Row="1" Name="UpThick" BeforeTextChanging="_BeforeTextChanging"/>
+        <SymbolIcon Grid.Column="2" Grid.Row="1" Symbol="Up" Margin="5" RenderTransformOrigin="0.5,0.5">
+            <SymbolIcon.RenderTransform>
+                <CompositeTransform Rotation="180"/>
+            </SymbolIcon.RenderTransform>
+        </SymbolIcon>
+        <TextBox Grid.Column="3" Grid.Row="1" Name="DownThick" BeforeTextChanging="_BeforeTextChanging"/>
+    </Grid>
+</UserControl>
