@@ -4,6 +4,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:c="using:Microsoft.Toolkit.Uwp.UI.Controls" 
     xmlns:local="using:Loadout_Creator"
     mc:Ignorable="d"
     RequestedTheme="Dark">
@@ -15,41 +16,100 @@
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
         </Style>
+        <Style TargetType="c:GridSplitter" x:Key="ColumnGridSplitterStyle">
+            <Setter Property="ResizeBehavior" Value="BasedOnAlignment"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="ResizeDirection" Value="Columns"/>
+            <Setter Property="IsTabStop" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="c:GridSplitter">
+                        <Grid Background="Transparent">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2"/>
+                            </Grid.ColumnDefinitions>
+                            <Rectangle Fill="Gray"  Margin="1,0,0,0"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Page.Resources>
-
-    <Grid Margin="5" Grid.Column="1">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="11"/>
+            <ColumnDefinition Width=".25*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock FontSize="30" Text="Queries maybe a preview query option"/>
-        <Button Grid.Column="1" Style="{StaticResource IconButton}" Click="AddButton_Click">
-            <SymbolIcon Symbol="Add"/>
-        </Button>
-        <Button Grid.Column="2" Style="{StaticResource IconButton}">
-            <Viewbox Margin="5">
-                <SymbolIcon Symbol="More"/>
-            </Viewbox>
-            <Button.Flyout>
-                <MenuFlyout>
-                    <MenuFlyoutItem>Delete All</MenuFlyoutItem>
-                    <MenuFlyoutItem>Import/Export Data?</MenuFlyoutItem>
-                </MenuFlyout>
-            </Button.Flyout>
-        </Button>
-        <Rectangle Height="1" Fill="Gray" Grid.Row="1" Grid.ColumnSpan="6"/>
-        <ListView Grid.Row="2" Grid.ColumnSpan="5">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="local:Query">
-                    <TextBlock Text="{Binding Name}"/>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <Grid Margin="5,5,11,5" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock FontSize="30" Text="Queries"/>
+            <Button Grid.Column="1" Style="{StaticResource IconButton}" Click="AddButton_Click">
+                <SymbolIcon Symbol="Add"/>
+            </Button>
+            <Button Grid.Column="2" Style="{StaticResource IconButton}">
+                <Viewbox Margin="5">
+                    <SymbolIcon Symbol="More"/>
+                </Viewbox>
+                <Button.Flyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem>Delete All</MenuFlyoutItem>
+                        <MenuFlyoutItem>Import/Export Data?</MenuFlyoutItem>
+                    </MenuFlyout>
+                </Button.Flyout>
+            </Button>
+            <Rectangle Height="1" Fill="Gray" Grid.Row="1" Grid.ColumnSpan="6"/>
+            <ListView Grid.Row="2" Grid.ColumnSpan="5">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:Query">
+                        <TextBlock Text="{Binding Name}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        <c:GridSplitter Grid.Column="1" Style="{StaticResource ColumnGridSplitterStyle}"/>
+        <Grid Grid.Column="2" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock FontSize="30" Text="Preview" HorizontalAlignment="Center"/>
+            
+            <Rectangle Height="1" Fill="Gray" Grid.Row="1" Grid.ColumnSpan="6"/>
+            <TextBlock Grid.Row="2" Text="No Query Selected" FontSize="20"/>
+
+            <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="5" Spacing="5">
+                <TextBlock Text="Selected Data Element" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                <ComboBox x:Name="DataElementPreviewCombo" Width="150"/>
+                <Button Width="30" Height="30" Padding="5" ToolTipService.ToolTip="Clear Selection">
+                    <Viewbox>
+                        <SymbolIcon Symbol="Clear"/>
+                    </Viewbox>
+                </Button>
+            </StackPanel>
+            
+            <Rectangle Height="1" Fill="Gray" Grid.Row="4" Grid.ColumnSpan="6"/>
+
+            <ListView Grid.Row="5">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:DataElement">
+                        <TextBlock Text="Name"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
     </Grid>
 </Page>

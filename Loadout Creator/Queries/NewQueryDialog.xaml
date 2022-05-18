@@ -25,6 +25,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto" MaxHeight="200"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <TextBlock Text="Name" VerticalAlignment="Center"/>
         <TextBox x:Name="NameBox" Grid.Column="1" PlaceholderText="Name"/>
@@ -39,7 +40,7 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
         
-        <CheckBox Grid.Row="2" Grid.Column="1">Add "None" to Query</CheckBox>
+        <CheckBox Grid.Row="2" Grid.Column="1" Checked="NoneCheckBox_Checked" Unchecked="NoneCheckBox_Unchecked">Add "None" to Query</CheckBox>
 
         <TextBlock Text="Data Reference (Optional)" Grid.Row="3" VerticalAlignment="Center"/>
         <Grid  Grid.Column="1" Grid.Row="3" ColumnSpacing="5">
@@ -55,14 +56,13 @@
                 </ComboBox.ItemTemplate>
             </ComboBox>
 
-
             <Button Grid.Column="1" CornerRadius="0" Width="32.8" Height="32.8" Padding="0" ToolTipService.ToolTip="Clear Data Reference" Click="ClearDataSetReferenceButton_Click">
                 <SymbolIcon Symbol="Clear"/>
             </Button>
-            
         </Grid>
+        
         <TextBlock Text="Groups" Grid.Row="4" Grid.ColumnSpan="3" TextAlignment="Center" VerticalAlignment="Center"/>
-        <Button HorizontalAlignment="Right" Grid.Column="1" Grid.Row="3" Background="Transparent" BorderBrush="Transparent" Height="30" Width="30" Padding="0">
+        <Button HorizontalAlignment="Right" Grid.Column="1" Grid.Row="4" Background="Transparent" BorderBrush="Transparent" Height="30" Width="30" Padding="0">
             <SymbolIcon Symbol="More"/>
             <Button.Flyout>
                 <MenuFlyout>
@@ -73,6 +73,20 @@
         </Button>
 
         <ListView x:Name="GroupsListView" Grid.Row="5" Grid.ColumnSpan="2" SelectionMode="Multiple"/>
-        <TextBlock x:Name="ErrorBlock" Foreground="Yellow" Grid.Row="6" HorizontalAlignment="Stretch" Grid.ColumnSpan="2"/>
+
+        <TextBlock Text="Default Value (Optional)" Grid.Row="6" VerticalAlignment="Center"/>
+        <Grid  Grid.Column="1" Grid.Row="6" ColumnSpacing="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <ComboBox x:Name="DefaultValueCombo" HorizontalAlignment="Stretch"/>
+            <Button Grid.Column="1" CornerRadius="0" Width="32.8" Height="32.8" Padding="0" ToolTipService.ToolTip="Clear Data Reference" Click="ClearDefaultComboButton_Click">
+                <SymbolIcon Symbol="Clear"/>
+            </Button>
+        </Grid>
+
+        <TextBlock x:Name="ErrorBlock" Foreground="Yellow" Grid.Row="7" HorizontalAlignment="Stretch" Grid.ColumnSpan="2"/>
+        
     </Grid>
 </ContentDialog>

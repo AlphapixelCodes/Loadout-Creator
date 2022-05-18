@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -21,6 +22,7 @@ namespace Loadout_Creator
     {
         private readonly SchemaData schema;
         private readonly Query query;
+        public ObservableCollection<String> DefaultValues = new ObservableCollection<string>();
         private DataSet ComboSet=> DataSetCombo.SelectedItem as DataSet;
         private DataSetReference_DataColumn ComboReference=> DataReferenceCombo.SelectedItem as DataSetReference_DataColumn;
 
@@ -83,12 +85,14 @@ namespace Loadout_Creator
 
         private void DataSetCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            ReEvaluateDefaultValue();
             DataReferenceCombo.ItemsSource = ComboSet.Properties.Where(z => z is DataSetReference_DataColumn);
             DataReferenceCombo_SelectionChanged();
         }
 
         private void DataReferenceCombo_SelectionChanged(object sender=null, SelectionChangedEventArgs e=null)
         {
+            ReEvaluateDefaultValue();
             if (DataReferenceCombo.SelectedIndex > -1) {
                 GroupsListView.ItemsSource = ComboReference.ReferencedDataSet.Groups;
             }
@@ -98,9 +102,23 @@ namespace Loadout_Creator
             }
         }
 
-        private void ClearDataSetReferenceButton_Click(object sender, RoutedEventArgs e)
+        private void ReEvaluateDefaultValue()
         {
-            DataReferenceCombo.SelectedIndex = -1;
+            throw new NotImplementedException();
+        }
+
+        private void ClearDataSetReferenceButton_Click(object sender, RoutedEventArgs e) => DataReferenceCombo.SelectedIndex = -1;
+
+        private void ClearDefaultComboButton_Click(object sender, RoutedEventArgs e) => DefaultValueCombo.SelectedIndex = -1;
+
+        private void NoneCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void NoneCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
